@@ -4,14 +4,12 @@ Wymysl dobrą nazwę.
 Jak sprawdzisz że faktycznie jest 50% 1 i 50% -1?"""
 
 import random
-from collections import Counter
 
-def drawing_func(how_many_draws):
-    step_list = [1, -1]
-    steps_draw_list = []
-    for i in range(how_many_draws):
-        steps_draw_list.append(random.choice(step_list))
-#użyłem random.choice (nie choices), gdyż ta funkcja domyślnie rodzieliła po równo prawdopodobieństwo na ilość elementów, w tym wypadku 2 elementy czyli 50/50 na każdy element
-    return steps_draw_list
+def drawing_func():
+    return random.choice([-1, 1])
+#print(drawing_func())
 
-#print(Counter(drawing_func(200)))
+#def test_drawing_func(how_many_times):
+#    for i in range(how_many_times):
+#        print(drawing_func())
+#test_drawing_func(1000)
