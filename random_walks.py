@@ -7,27 +7,32 @@ Odpal to 1_000_000 razy. Ile miałeś 10?
 W tym samym pliku napisz funkcję walk_distance która przyjmie dystans do pokonania i zwróci ilość kroków potrzebnych
 do pokonania tego dystansu z uzyciem funkcji z pliku random_step_generators."""
 
-from collections import Counter
 from random_step_generators import drawing_func
 
 def walk_steps(how_many_steps):
-    steps_register = []
-    x = 0
-    while x < 1_000_000:
-        steps_register.append(sum(drawing_func(how_many_steps)))
-        x += 1
-    return steps_register
-# 10: na 1_000_000 było ok 900 i w górę
+    on_axis = 0
+    for i in range(how_many_steps):
+        on_axis += drawing_func()
+    return on_axis
+#print(walk_steps(10))
+
+#def test_walk_steps(how_many_times):
+#    for i in range(how_many_times):
+#        print(walk_steps(10))
+#test_walk_steps(1_000_000)
 
 
-def walk_distance(distance_meters):
-    step_summmary = 0
-    while distance_meters >= step_summmary:
-        steps_to_walk_distance = len(str(drawing_func(distance_meters)))
-        step_summmary += steps_to_walk_distance
-    return step_summmary
-# ok 350 kroków do zrobienia na dystansie 100
+def walk_distance(distance):
+    step_summary = 0
+    all_steps_list = []
+    while distance >= step_summary:
+            step_summary += drawing_func ()
+            all_steps_list.append(step_summary)
+    return len(all_steps_list)
+#print(walk_distance(100))
 
-print(Counter(walk_steps(10)))
-print("")
-print(walk_distance(1))
+
+#def test_walk_distance(how_many_times):
+#    for i in range(how_many_times):
+#        print(walk_distance(10))
+#test_walk_distance(10)
