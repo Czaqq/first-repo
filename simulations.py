@@ -8,9 +8,8 @@ from random_walks import walk_steps, walk_distance
 
 def simulate_drunk_walks_distance(how_many_walks):
     step_rate = []
-    distance = how_many_walks
     for x in range(how_many_walks):
-        step_rate.append(walk_distance(distance))
+        step_rate.append(walk_distance(10))
     return min(step_rate)
 #print(simulate_drunk_walks_distance(100))
 
