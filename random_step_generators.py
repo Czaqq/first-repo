@@ -9,7 +9,7 @@ def drawing_func_x_and_y():
     y = random.choice([-1, 1])
     return x, y
 
-def drawing_func_x_or_y_move():
+def drawing_func_x_or_y():
     x = random.choice([-1, 1])
     y = random.choice([-1, 1])
     return random.choice([x, y])
